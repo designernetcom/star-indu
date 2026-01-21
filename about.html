@@ -1,0 +1,1752 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Website Layout">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Industry & Factory HTML Template">
+    <meta name="description" content=".">
+
+    <!-- title  -->
+    <title>Star Industries</title>
+
+    <!-- favicon -->
+   
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="css/plugins.css">
+
+    <!-- search css -->
+    <link rel="stylesheet" href="search/search.css">
+
+    <!-- quform css -->
+    <link rel="stylesheet" href="quform/css/base.css">
+
+    <!-- scroll -->
+    <link rel="stylesheet" href="css/scrollbar.css">
+
+    <!-- theme core css -->
+    <link href="css/styles.css" rel="stylesheet"> 
+    <style>
+       
+      
+
+        .about-section {
+            min-height: 100vh;
+            /* background: linear-gradient(135deg, #ffffff 0%, #e8eef5 100%); */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.08) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .about-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .badge-pill {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+ .title-highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .about-subtitle {
+            font-size: 1.35rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: #475569;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-item:hover {
+            padding-left: 0.5rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .stats-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: -1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            background: linear-gradient(to bottom, transparent, #e2e8f0, transparent);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+
+        .image-wrapper {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition-delay: 0.3s;
+        }
+
+        .image-wrapper.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: white;
+        }
+
+        .image-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .image-card:hover .about-image {
+            transform: scale(1.05);
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .badge-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1;
+        }
+
+        .badge-text {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .decorative-shape {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            top: -200px;
+            right: -100px;
+            filter: blur(60px);
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+            bottom: -150px;
+            left: -100px;
+            filter: blur(60px);
+        }
+
+        @media (max-width: 992px) {
+            .about-title {
+                font-size: 3rem;
+            }
+
+            .stats-grid {
+                gap: 1.5rem;
+            }
+
+            .floating-badge {
+                padding: 1rem 1.5rem;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .about-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stat-item::after {
+                display: none;
+            }
+
+            .stats-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .floating-badge {
+                position: static;
+                margin-top: 1.5rem;
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .badge-pill {
+                font-size: 0.75rem;
+            }
+        }
+    </style>   
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADING
+    ================================================== -->
+  
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper">
+
+        <!-- HEADER
+        ================================================== -->
+           <header class="header-style1">
+
+      <div class="navbar-default border-bottom border-color-light-white" style="background-color: white;">
+
+
+
+        <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-12">
+              <div class="menu_area alt-font">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                  <div class="navbar-header navbar-header-custom">
+                    <!-- start logo -->
+                    <a href="./index.html" class="navbar-brand logochange"><img id="logo" src="./logo1.png"
+                        alt="logo"></a>
+                    <!-- end logo -->
+                  </div>
+
+                  <div class="navbar-toggler bg-primary"></div>
+
+                  <!-- start menu area -->
+                  <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
+                    <li><a href="index.html">Home</a>
+                   
+                    </li>
+                    <li>
+                      <a href="about.html">About Us</a>
+                      <ul>
+                        <li><a href="about.html">Who we are</a></li>
+                        <li><a href="management.html">Management </a></li>
+                        <li><a href="how-we-work.html"> History</a></li>
+
+                        <li><a href="certification.html">Certifications</a></li>
+
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#"> Infrastructure</a>
+                      <ul>
+
+                        <li><a href="tooling.html">Tooling </a></li>
+                        <li><a href="production.html">Production</a></li>
+                        <li><a href="training.html">Training</a></li>
+                        <li><a href="quality&inspection.html">Quality & Inspection</a></li>
+
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">Machines</a>
+                      <ul>
+                        <li><a href="precision-machining.html">Precision Machining</a>
+                        <ul>
+                        <li><a href="cnc_machining.html">CNC Machining</a></li>
+                        <li><a href="vmc_machining.html">VMC Machining</a></li>
+                        <li><a href="cnc_wirecut_edm.html">CNC Wirecut EDM</a></li>
+                      </ul>
+                        </li>
+                        <li><a href="precision-stamping.html">Precision Stamping</a>
+                       <ul>
+                        <li><a href="aida_machining.html">AIDA Machining</a></li>
+                        <li><a href="komatsu_machining.html">KOMAT`SU Machining</a></li>
+                        
+                      </ul>
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="clients.html">Clients</a>
+                    
+
+
+                    </li>
+                    <li><a href="event&updates.html">Event & Updates</a></li>
+
+                <li class="d-none d-xl-inline-block">
+  <a href="contact.html" class="btn-style1 white-hover small">
+    <span>Contact Us</span>
+  </a>
+</li>
+                  </ul>
+                  </li>
+
+                  <!-- </ul> -->
+                  <!-- end menu area -->
+
+                  <!-- start attribute navigation -->
+                  <!-- <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
+                    <ul> -->
+
+     
+
+
+                    </ul>
+                  <!-- </div> -->
+                  <!-- end attribute navigation -->
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+        <!-- PAGE TITLE
+        ================================================== -->
+        <!-- <section style="padding: 90px 0 90px 0;" class="page-title-section top-position1 bg-img cover-background left-overlay-secondary" data-overlay-dark="85" data-background="img/banner/6753d5f613.jpg">
+            <div class="container">                
+                <h1>About Us</h1>
+                <ul>
+                  
+                </ul>                
+            </div>
+        </section> -->
+
+              <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+            .banner-section {
+            position: relative;
+            width: 100%;
+            height: 370px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://static.vecteezy.com/system/resources/previews/025/500/704/non_2x/the-cnc-milling-machine-cutting-the-metal-part-with-the-sparking-light-the-hi-technology-mold-and-die-manufacturing-process-cnc-machine-tool-in-a-metal-factory-cutting-metal-ai-generated-free-photo.jpg') center/cover no-repeat;
+            z-index: 1;
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        /* Enhanced red overlay - more transparent to show background */
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.336) 0%, 
+                rgba(0, 0, 0, 0.652) 30%,
+                rgba(10, 10, 10, 0.377) 100%);
+            z-index: 2;
+        }
+
+        /* Subtle pattern overlay */
+        .banner-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+         
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #fff;
+            animation: fadeInUp 1.2s ease forwards;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .banner-icon {
+            width: 110px;
+            height: 110px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 5px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(12px);
+            animation: iconFloat 4s ease-in-out infinite;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+
+        .banner-icon:hover {
+            transform: scale(1.15) rotate(180deg);
+            border-color: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            50% { 
+                transform: translateY(-10px) rotate(5deg); 
+            }
+        }
+
+        .banner-icon i {
+            font-size: 3.5rem;
+            color: #fff;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+        }
+
+        .banner-title {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 11px;
+            color: #fff;
+            text-shadow: 
+                0 3px 15px rgba(0, 0, 0, 0.4),
+                0 6px 30px rgba(0, 0, 0, 0.3),
+                0 1px 0 rgba(255, 255, 255, 0.1);
+            margin: 0;
+            line-height: 1;
+            position: relative;
+            padding-left: 18px;
+            font-family: 'Poppins' ;
+        }
+
+        /* Animated underline */
+        .banner-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.7);
+            animation: expandLine 1.5s ease forwards 0.5s;
+        }
+
+        @keyframes expandLine {
+            to {
+                width: 200px;
+            }
+        }
+
+        /* Decorative geometric elements */
+        .banner-decoration {
+            position: absolute;
+            z-index: 2;
+            opacity: 0.15;
+        }
+
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .decoration-2 {
+            bottom: 15%;
+            right: 8%;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #fff;
+            transform: rotate(45deg);
+            animation: rotateReverse 25s linear infinite;
+        }
+
+        .decoration-3 {
+            top: 20%;
+            right: 15%;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotateReverse {
+            from { transform: rotate(45deg); }
+            to { transform: rotate(405deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.2); opacity: 0.25; }
+        }
+
+
+
+
+
+         @media (max-width: 991px) {
+            .banner-section {
+                height: 400px;
+            }
+
+            .banner-icon {
+                width: 90px;
+                height: 90px;
+            }
+
+            .banner-icon i {
+                font-size: 3rem;
+            }
+
+            .banner-title {
+                font-size: 4.5rem;
+                letter-spacing: 12px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 767px) {
+            .banner-section {
+                height: 350px;
+            }
+
+            .banner-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .banner-icon {
+                width: 80px;
+                height: 80px;
+                border-width: 4px;
+            }
+
+            .banner-icon i {
+                font-size: 2.5rem;
+            }
+
+            .banner-title {
+                font-size: 3rem;
+                letter-spacing: 8px;
+                padding-left: 8px;
+            }
+
+            .banner-title::after {
+                width: 120px;
+            }
+
+            .decoration-1,
+            .decoration-2,
+            .decoration-3 {
+                display: none;
+            }
+
+            .content-section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-description {
+                font-size: 1rem;
+            }
+
+            .feature-card {
+                padding: 30px;
+            }
+
+            .feature-grid {
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-section {
+                height: 300px;
+            }
+
+            .banner-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .banner-icon i {
+                font-size: 2rem;
+            }
+
+            .banner-title {
+                font-size: 2.2rem;
+                letter-spacing: 6px;
+            }
+
+            .banner-title::after {
+                width: 80px;
+                height: 3px;
+            }
+        }
+        </style>
+
+ <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="banner-background"></div>
+        <div class="banner-overlay"></div>
+        
+        <!-- Decorative elements -->
+      
+        
+        <div class="banner-content">
+            <div class="banner-icon">
+                <i class="fas fa-cog"></i>
+            </div>
+            <h1 class="banner-title">Who we are</h1>
+        </div>
+    </section>
+
+
+        
+
+
+
+ <section class="about-section d-flex align-items-center" style="padding: 50px 0px 20px 0px;">
+        <div class="decorative-shape shape-1"></div>
+        <div class="decorative-shape shape-2"></div>
+        
+        <div class="container content-wrapper py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 about-content">
+                    <div class="badge-pill">About Star</div>
+                    <h1 class="about-title">Star Industries- Precision in <span class="title-highlight">Every Component</span> </h1>
+                    <p class="about-subtitle">
+                       Star Industries is a leading manufacturer of high-precision Sheet Metal Press and Machined Components
+                    </p>
+                    <p class="about-text" >
+Founded in 2014, Star Industries is a trusted manufacturer of Sheet Metal Press and Machined Components, driven by a skilled technical team committed to precision and quality. Based in the Chakan–Pune Industrial Area, our ISO 9001:2015 certified facility uses advanced technology to deliver reliable, high-quality products. We aim to be a leading supplier through continuous innovation and customer satisfaction.                    </p>
+                    
+                    
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 11l3 3L22 4"></path>
+                                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                                </svg>
+                            </div>
+                            <span class="feature-text">ISO 9001:2015 certified for consistent quality and reliability.
+</span>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                            </div>
+                            <span class="feature-text">Experts in Sheet Metal Press and Machined Components </span>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path>
+                                </svg>
+                            </div>
+                            <span class="feature-text">Committed to innovation, on-time delivery, customer satisfaction.</span>
+                        </li>
+                    </ul>
+
+                    <div class="stats-container">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">11+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">Projects Delivered</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">98%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 image-wrapper">
+                    <div class="image-container">
+                        <div class="image-card">
+                            <img src="img/about-img.jpeg" 
+                                 alt="Our Team Collaboration" 
+                                 class="about-image">
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutContent = document.querySelector('.about-content');
+            const imageWrapper = document.querySelector('.image-wrapper');
+            
+            observer.observe(aboutContent);
+            observer.observe(imageWrapper);
+
+            // Animate feature items
+            const featureItems = document.querySelectorAll('.feature-item');
+            featureItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 800 + (index * 150));
+            });
+
+            // Counter animation for stats
+            const animateCounter = (el) => {
+                const text = el.textContent;
+                const isPercentage = text.includes('%');
+                const target = parseInt(text);
+                let current = 0;
+                const increment = target / 60;
+                const duration = 2000;
+                const stepTime = duration / 60;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target + (isPercentage ? '%' : '+');
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current) + (isPercentage ? '%' : '+');
+                    }
+                }, stepTime);
+            };
+
+            // Observe stats container
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const numbers = entry.target.querySelectorAll('.stat-number');
+                        numbers.forEach((num, index) => {
+                            setTimeout(() => animateCounter(num), index * 200);
+                        });
+                        statObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsContainer = document.querySelector('.stats-container');
+            if (statsContainer) {
+                statObserver.observe(statsContainer);
+            }
+
+            // Subtle parallax on decorative shapes
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const scrolled = window.pageYOffset;
+                        const shapes = document.querySelectorAll('.decorative-shape');
+                        shapes.forEach((shape, index) => {
+                            const speed = (index + 1) * 0.3;
+                            shape.style.transform = `translateY(${scrolled * speed}px)`;
+                        });
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        });
+    </script>
+
+
+        <!-- EXTRA
+        ================================================== -->
+     
+
+        <!-- FAQ
+        ================================================== -->
+      
+        <!-- TESTIMONIAL
+        ================================================== -->
+        <!-- <section class="pb-0 pt-24 ms-lg-10 item bg-img overflow-visible cover-background rounded-start" data-background="https://t4.ftcdn.net/jpg/04/14/64/67/360_F_414646742_t7nWYogI5DEMhATZeR1njqKzHU6Sxeug.jpg">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="bg-dark rounded-top">
+                            <div class="section-title-01 mb-5 px-1-9 px-md-6 pt-1-9 pt-md-6">
+                                <img src="img/icons/quote-02.png" class="w-60px mb-4" alt="...">
+                                <h2 class="display-5 lh-1 font-weight-800 mb-0 text-white">What our happy client say about us</h2>
+                            </div>
+                            <div class="testimonial-carousel1 owl-carousel owl-theme px-1-9 px-md-6 pb-7" data-slider-id="1">
+                                <div>
+                                    <p class="text-white display-28 mb-2-6">I can't say enough about industrial. Industrial has really helped our business. Would definitely recommend industrial and will definitely be ordering again. Industrial has made a huge difference! I have tried a few software of this kind and industrial is the best by far! Industrial is exactly what i've been looking for.</p>
+                                    <h5 class="text-white mb-0"> Fesahaye Bisrat / MD Peaceful </h5>
+                                </div>
+                                <div>
+                                    <p class="text-white display-28 mb-2-6">I highly recommend industrial. It has been so important for us as we continue to grow our company. I have been using industrial for over a year now and i love it! I can't imagine life without it. It's so easy to use, and the customer service is great. I have tried a lot of similar products and Industrial is the best!</p>
+                                    <h5 class="text-white mb-0"> Demsas Luwam / CEO Peaceful </h5>
+                                </div>
+                                <div>
+                                    <p class="text-white display-28 mb-2-6">Instead of drowning in an endless chain of emails, there is clear and easy accountability meaning tasks actually get done! With industrial, we have finally accomplished things that have been waiting forever to get done. With industrial, communication between all of us is far more efficient. A game changer.</p>
+                                    <h5 class="text-white mb-0"> Iggi Tewolde / Manager Peaceful </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- OUR TEAM
+        ================================================== -->
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        } */
+        
+        .mission-vision-section {
+            padding: 0px 0;
+            position: relative;
+                        background: linear-gradient(135deg, #ffffff 0%, #e8eef5 100%);
+
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #4f4f4f;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 600;
+        }
+        
+        .mission-vision-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .mission-card, .vision-card {
+            flex: 1;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: all 0.5s ease;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+        }
+        
+        .card-image {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .mission-card:hover .card-image img,
+        .vision-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+        
+        .mission-card .card-overlay {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+        }
+        
+        .vision-card .card-overlay {
+            background: linear-gradient(135deg, rgba(250, 112, 154, 0.85) 0%, rgba(254, 225, 64, 0.85) 100%);
+        }
+        
+        .card-icon {
+            font-size: 4rem;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        
+        .card-content {
+            padding: 35px 30px;
+        }
+        
+        .card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .mission-card .card-title {
+            color: #667eea;
+        }
+        
+        .vision-card .card-title {
+            color: #fa709a;
+        }
+        
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .mission-card .card-title::after {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .vision-card .card-title::after {
+            background: linear-gradient(90deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .mission-card:hover .card-title::after,
+        .vision-card:hover .card-title::after {
+            width: 100px;
+        }
+        
+        .card-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #495057;
+            margin-bottom: 25px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: #6c757d;
+            position: relative;
+            padding-left: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-list li:hover {
+            color: #495057;
+            transform: translateX(5px);
+        }
+        
+        .feature-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: white;
+        }
+        
+        .mission-card .feature-list li::before {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .vision-card .feature-list li::before {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-card .stat-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+        
+        .vision-card .stat-box {
+            background: linear-gradient(135deg, rgba(250, 112, 154, 0.1) 0%, rgba(254, 225, 64, 0.1) 100%);
+        }
+        
+        .stat-box:hover {
+            transform: scale(1.05);
+        }
+        
+        /* .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+         */
+        .mission-card .stat-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .vision-card .stat-number {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Tablet Styles */
+        @media (max-width: 992px) {
+            .mission-vision-row {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .section-header p {
+                font-size: 1rem;
+            }
+            
+            .card-image {
+                height: 220px;
+            }
+            
+            .card-icon {
+                font-size: 3rem;
+            }
+            
+            .card-content {
+                padding: 25px 20px;
+            }
+            
+            .card-title {
+                font-size: 1.6rem;
+            }
+            
+            .card-text {
+                font-size: 0.95rem;
+            }
+            
+            .feature-list li {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .mission-vision-section {
+                padding: 0px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+            
+            .card-image {
+                height: 200px;
+            }
+            
+            .card-content {
+                padding: 20px 15px;
+            }
+            
+            .card-title {
+                font-size: 1.4rem;
+            }
+            
+            .stat-number {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+
+
+     <section class="mission-vision-section" >
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2> </h2>
+                                    <h1 class="about-title">Our Mission <span class="title-highlight">& Vision</span> </h1>
+                <p>Shaping the Future with Innovation, Quality, and Commitment</p>
+
+            </div>
+            
+            <!-- Mission & Vision Cards Side by Side -->
+            <div class="mission-vision-row">
+                <!-- Mission Card -->
+                <div class="mission-card">
+                    <div class="card-image">
+                        <img src="https://t4.ftcdn.net/jpg/05/00/91/81/360_F_500918189_xsBOBFpzqSekBwrIQf2e2A7jwwS5Ntqh.jpg">
+                        <!-- <div class="card-overlay">
+                            <i class="fas fa-bullseye card-icon"></i>
+                        </div> -->
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Our Mission</h3>
+                        <p class="card-text">
+                           Our mission is to develop and deliver high-quality, precision-engineered products at competitive prices, while fostering a culture that supports sustainability, innovation, and customer satisfaction.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Maintaining the highest standards of product quality.</li>
+                            <li>Encouraging environmentally responsible practices</li>
+                            <li>Continuously improving efficiency and productivity.</li>
+                            <li>Empowering our team to achieve operational excellence.</li>
+                        </ul>
+                        <div class="stat-box">
+                            <span class="stat-number">99.8%</span>
+                            <span class="stat-label">Quality Rate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision Card -->
+                <div class="vision-card">
+                    <div class="card-image">
+                        <img src="https://img.freepik.com/premium-photo/metalworking-cnc-milling-machine-cutting-metal-modern-processing-technology-small-depth-field-warning-authentic-shooting-challenging-conditions-little-bit-grain-maybe-blurred_564276-3700.jpg?semt=ais_hybrid&w=740&q=80" alt="Our Vision">
+                        
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Our Vision</h3>
+                        <p class="card-text">
+                          Star Industries would like to become global customers first choice supplier. Through our commitments to quality, delivery, development and continual upgradation of manufacturing process and overall system. We aim to exceed the expectations of customers and rewarded with smile.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Setting new benchmarks in manufacturing excellence.</li>
+                            <li>Building long-term trust through superior quality and reliability.</li>
+                            <li>Adopting modern technologies for continuous improvement</li>
+                            <li>Expanding our reach to serve global markets with pride.</li>
+                        </ul>
+                        <div class="stat-box">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Customer Served</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.mission-card, .vision-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.8s ease';
+            observer.observe(card);
+        });
+        
+        // Counter animation
+        const animateCounter = (el) => {
+            const text = el.textContent;
+            const target = parseFloat(text);
+            const isPercent = text.includes('%');
+            const isPlus = text.includes('+');
+            
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target + (isPercent ? '%' : isPlus ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(current) + (isPercent ? '%' : isPlus ? '+' : '');
+                }
+            }, 30);
+        };
+        
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const number = entry.target.querySelector('.stat-number');
+                    if (number && !number.classList.contains('animated')) {
+                        number.classList.add('animated');
+                        animateCounter(number);
+                    }
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.stat-box').forEach(stat => {
+            statObserver.observe(stat);
+        });
+    </script>
+
+        <!-- FOOTER
+        ================================================== -->
+        <style>
+      .footer-style01 {
+        position: relative;
+        background: url('img/banner/images\ \(1\).png') center center/cover no-repeat;
+        color: #fff;
+        overflow: hidden;
+        padding: 40px 0px;
+      }
+
+      .footer-style01 .footer-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.611);
+        /* light overlay */
+        backdrop-filter: brightness(0.7);
+        z-index: 1;
+      }
+
+      .footer-style01 .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* link colors */
+      .footer-style01 a {
+        color: #f1f1f1;
+        transition: color 0.3s ease;
+      }
+
+      .footer-style01 a:hover {
+        color: #ffcc00;
+      }
+
+      /* make text readable */
+      .footer-style01 p,
+      .footer-style01 h3 {
+        color: #fff;
+        z-index: 2;
+        position: relative;
+      }
+
+      /* responsive tweak */
+      @media (max-width: 768px) {
+        .footer-style01 {
+          text-align: center;
+        }
+      }
+    </style>
+
+    <!-- FOOTER
+        ================================================== -->
+    <footer class="footer-style01 pt-10 pb-8">
+      <div class="footer-overlay"></div> <!-- overlay layer -->
+      <div class="container position-relative">
+        <div class="row mb-6">
+
+
+          <div class="col-md-4">
+            <div class="ps-md-2-6 ">
+              <h3 class="text-white h4 mb-2-4 mt-2-4">Contact Us</h3>
+              <ul class="links-wrap list-unstyled mb-0">
+                <li><a href="#"><i class="fas fa-map-marker-alt me-2"></i>Star Industries, Plot No 56, WMDC, BH BSNL
+                    Tower, Ambethan Road, Chakan. Pune-410 501</a></li>
+                <li><a href="mailto:starindustriesc@gmail.com"><i
+                      class="fas fa-envelope me-2"></i>starindustriesc@gmail.com</a></li>
+                <li><a href="tel:+919960694337"><i class="fas fa-phone-alt me-2"></i>+91 99606 94337</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!--  <div class="col-md-3">
+            <div class="ps-md-2-6 ps-xl-7">
+              <h3 class="text-white h4 mb-2-4 mt-2-4">Products</h3>
+              <ul class="links-wrap list-unstyled mb-0">
+                <li><a href="">Sheet Metal Press Part (Brass, Copper, SS)</a></li>
+                <li><a href="">Stainless Steel</a></li>
+                <li><a href="">Terminal</a></li>
+                <li><a href="">Insert Molding</a></li>
+                <li><a href="">Bracket  </a></li>
+              </ul>
+            </div>
+          </div> --> 
+
+
+          <div class="col-md-4">
+            <div class="ps-lg-4">
+              <h3 class="text-white h4 mb-2-4 mt-2-4">Our Location</h3>
+
+
+              <div style="border-radius: 10px; overflow: hidden;">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.612324332731!2d73.8567430747834!3d18.508895369308527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c06f4828f2c7%3A0x9fcb3bcfdbbb2b2f!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="col-md-4" style="padding-right:0px; padding-left: 0px;">
+            <div class="ps-lg-4">
+              <h3 class="text-white h4 mb-2-4 mt-2-4">Review Us</h3>
+              <a href="">
+                <img
+                  src="https://cdn.prod.website-files.com/62b1b17308b0d74291186304/63ca9fbadaacd2153b8045ca_Click-here-teo-leave-us-a-review-on-Google-min.png"
+                  alt="" style="width: 60%;">
+              </a>
+            </div>
+          </div> 
+
+
+
+
+        </div>
+
+      </div>
+
+      <div class="container position-relative">
+        <div class="row mt-n4 align-items-center">
+          <div class="col-lg-12 mt-4" style="display: flex; align-items: center; justify-content: center;">
+            <div class="text-center text-lg-start">
+              <p class="d-inline-block text-white mb-0">
+                &copy; All Rights Reserved | Designed & Developed By
+                <a href="https://netcom-india.com/" class="text-primary text-white-hover"
+                  style="color: #fff !important;">Netcom Business
+                  Solutions Pvt Ltd</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    </div>
+
+    <div class="sticky-icon">
+        <a href="https://www.facebook.com/starindustries37/" class="Facebook">
+            <i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@balchandrachougule5306" class="Youtube">
+            <i class="fab fa-youtube" style="color: #ff0000;"></i></a>
+
+        <a href="https://www.linkedin.com/company/starindustrie/" class="Twitter">
+            <i class="fab fa-linkedin-in"></i></a>
+
+            <!-- <a href="" class="Whatsapp">
+            <i class="fab fa-whatsapp"></i></a> -->
+        <a href="https://www.instagram.com/starindustries_47/" class="Instagram">
+            <i class="fab fa-instagram"></i></a>
+        
+    </div>
+
+    <!-- BUY THEME
+    ================================================== -->
+   
+    <!-- SCROLL TO TOP
+    ================================================== -->
+
+    <!-- all js include start -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- scroll -->
+    <script src="js/jquery.scrollbar.min.js"></script>
+
+    <!-- jquery -->
+    <script src="js/core.min.js"></script>
+
+    <!-- search -->
+    <script src="search/search.js"></script>
+
+    <!-- custom scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- form plugins js -->
+    <script src="quform/js/plugins.js"></script>
+
+    <!-- form scripts js -->
+    <script src="quform/js/scripts.js"></script>
+
+    <!-- all js include end -->
+
+</body>
+
+</html>
